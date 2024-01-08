@@ -18,7 +18,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'aeria-app-layout',
+      name: 'aeria-app-theme',
       formats: [
         'es'
       ]
