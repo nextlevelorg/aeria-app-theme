@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "preserveSymlinks": true,
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src",
+    "waltz-ui.d.ts"
+  ]
+}
