@@ -1,9 +1,11 @@
+@horizontal-padding: 1.6rem;
+
 .navbar {
   &__route {
     display: flex;
     align-items: center;
     font-weight: 300;
-    padding: .85rem 1.8rem;
+    padding: 1rem @horizontal-padding;
 
     &>:first-child {
       margin-right: auto;
@@ -18,8 +20,7 @@
     }
 
     &--sub {
-      padding-left: calc(1rem + var(--level-padding) * 1.8rem) !important;
-      font-size: .85rem;
+      padding-left: calc(1rem + var(--level-padding) * @horizontal-padding) !important;
     }
   }
 }

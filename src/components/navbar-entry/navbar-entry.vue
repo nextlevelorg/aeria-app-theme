@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
     <aeria-icon
       :icon="item.meta!.icon!"
       style="
-        --icon-size: 1.2rem;
+        --icon-size: 1.35rem;
         --icon-color: var(--theme-brand-color-shade-2);
       "
     >
@@ -41,8 +41,16 @@ const props = withDefaults(defineProps<Props>(), {
     </aeria-badge>
 
     <div v-if="'collapsed' in item">
-      <aeria-icon v-if="isCollapsibleRouteOpen(item)" icon="angle-up"></aeria-icon>
-      <aeria-icon v-else icon="angle-down"></aeria-icon>
+      <aeria-icon
+        v-if="isCollapsibleRouteOpen(item)"
+        icon="caret-up"
+        icon-style="regular"
+      ></aeria-icon>
+      <aeria-icon
+        v-else
+        icon="caret-down"
+        icon-style="regular"
+      ></aeria-icon>
     </div>
 
   </div>

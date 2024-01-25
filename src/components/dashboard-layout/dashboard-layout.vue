@@ -114,19 +114,6 @@ const parentRoutes = computed(() => {
           @click="pushRoute('/dashboard')"
         />
 
-        <div
-          v-else
-          class="dashboard__view-title"
-        >
-          {{ t(viewTitle, { capitalize: true }) }}
-        </div>
-
-        <router-view
-          v-if="breakpoints.md"
-          name="topbar"
-        ></router-view>
-
-
         <div class="dashboard__topbar-separator"></div>
 
         <slot
@@ -140,7 +127,7 @@ const parentRoutes = computed(() => {
             class="dashboard__user"
           >
             <aeria-picture
-              :file-id="currentUser.picture?._id || currentUser.picture"
+              :file-id="currentUser.picture?._id || currentUser.picture._id"
               class="dashboard__user-picture"
             ></aeria-picture>
 
@@ -194,13 +181,19 @@ const parentRoutes = computed(() => {
         'dashboard__view': true,
         'dashboard__view--padded': !$route.meta.fill
       }">
-        <router-view
-          v-if="!breakpoints.md"
-          name="topbar"
-        ></router-view>
+
+        <div class="dashboard__view-top">
+          <div class="dashboard__view-title">
+            {{ t(viewTitle, { capitalize: true }) }}
+          </div>
+          <router-view name="topbar"></router-view>
+        </div>
+
 
         <router-view v-slot="{ Component }">
-          <component :is="Component"></component>
+          <div class="dashboard__view-content">
+            <component :is="Component"></component>
+          </div>
         </router-view>
       </div>
 
