@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { RouteRecordRaw } from 'vue-router'
 import type { MenuNode } from 'waltz-ui'
-import { provide } from 'vue'
 import { isCollapsibleRouteOpen, routeClick } from '../utils'
 import NavbarEntry from '../navbar-entry/navbar-entry.vue'
 
@@ -10,8 +9,6 @@ type Props = {
   memoKey: string
   level?: number
 }
-
-provide('iconStyle', 'duotone')
 
 const props = withDefaults(defineProps<Props>(), {
   level: 0
