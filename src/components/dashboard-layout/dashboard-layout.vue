@@ -127,17 +127,17 @@ const parentRoutes = computed(() => {
             class="dashboard__user"
           >
             <aeria-picture
-              :file-id="currentUser.picture?._id || currentUser.picture._id"
+              :file-id="currentUser.picture_file?._id || currentUser.picture_file._id"
               class="dashboard__user-picture"
             ></aeria-picture>
 
-            <div>Olá, {{ currentUser.full_name.split(' ')[0] }}</div>
+            <div>Olá, {{ currentUser.name.split(' ')[0] }}</div>
           </div>
 
           <template #header>
             <div class="dashboard__user-context-header">
               <div class="tx-text-[12pt]">
-                {{ currentUser.full_name }}
+                {{ currentUser.name }}
               </div>
 
               <div class="dashboard__user-context-roles">
@@ -163,7 +163,7 @@ const parentRoutes = computed(() => {
 
           <template #logout>
             <aeria-icon
-              icon="signout"
+              icon="sign-out"
               @click="userStore.$actions.signout(); router.push('/user/signin')"
             >
               Sair
