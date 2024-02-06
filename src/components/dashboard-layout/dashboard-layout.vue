@@ -57,7 +57,7 @@ const parentRoutes = computed(() => {
         <aeria-icon
           v-if="!breakpoints.md"
           v-clickable
-          icon="multiply"
+          icon="x"
           @click="metaStore.menu.visible = false"
         ></aeria-icon>
 
@@ -102,7 +102,7 @@ const parentRoutes = computed(() => {
         <aeria-icon
           v-if="!breakpoints.md"
           v-clickable
-          icon="bars"
+          icon="list"
           @click="metaStore.menu.visible = true"
         ></aeria-icon>
 
