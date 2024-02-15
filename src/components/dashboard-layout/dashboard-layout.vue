@@ -183,7 +183,15 @@ const parentRoutes = computed(() => {
       }">
 
         <div class="dashboard__view-top">
-          <div class="dashboard__view-title">
+          <slot
+            v-if="$slots['view-title']"
+            name="view-title"
+          ></slot>
+
+          <div
+            v-else
+            class="dashboard__view-title"
+          >
             {{ t(viewTitle, { capitalize: true }) }}
           </div>
           <router-view name="topbar"></router-view>
